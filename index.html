@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>GROW Formularz</title>
+	<meta name="author" content="Robert Rak">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="css/style2.css" rel="stylesheet" type="text/css">
+
+	<script src="js/multi_step_form.js" type="text/javascript"></script>
+</head>
+
+<body>
+	<div class="content">
+		<form action="#" class="regform" method="POST">
+			<p id="error"></p>
+
+			<fieldset id="first">
+				<h2 class="title">Form GROW Robert Rak</h2>
+				<p class="subtitle">Krok 1</p>
+				<p><input placeholder="Imię" name="firstName" type="text" class="text_field" title="Podaj minimum dwa znaki" oninput="this.className = ''" required ></p>
+				<p><input placeholder="Nazwisko" name="lastName" type="text" class="text_field" title="Podaj minimum dwa znaki" oninput="this.className = ''" required></p>
+				<p><input placeholder="Email" name="emailAddress" type="email" class="text_field"pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" oninput="this.className = ''" required aria-required="true" aria-describedby="email-blad"></p>
+				
+				<p><input id="next_btn1" onclick="next_step1()" type="button" value="Dalej"></p>
+			</fieldset>
+			<fieldset id="second">
+				<h2 class="title">Form GROW Robert Rak</h2>
+				<p class="subtitle">krok 2</p>
+
+				<p class="inputSelect"><label class="label">Najbardziej polecane państwo do odwiedzenia?</label><br>
+					<select class="options" name="bestCountry" required>
+						<option disabled selected value> -- Wybierz jedno Państwo -- </option>
+						<option value="polska">Polska</option>
+						<option value="francja">Francja</option>
+						<option value="hiszpania">Hiszpania</option>
+						<option value="portugalia">Portugalia</option>
+					</select>
+				</p>
+
+					<p><label class="label">Wolisz psy czy koty?</label></p>
+					<p><label class="label"><input name="favouritePet" type="radio" value="Kot" oninput="this.className = ''" >Kot</label></p>
+					<p><label class="label"><input name="favouritePet" type="radio" value="Pies" oninput="this.className = ''" required>Pies</label></p>
+					<p><label class="label"><input placeholder="Szczęśliwa liczba" name="luckyNumer" type="number" oninput="this.className = ''"></label></p>
+
+				<input id="pre_btn1" onclick="prev_step1()" type="button" value="Poprzednie">
+				<input id="next_btn2" name="next" onclick="next_step2()" type="button" value="Dalej">
+			</fieldset>
+			<fieldset id="third">
+				<h2 class="title">Form GROW Robert Rak</h2>
+				<p class="subtitle">Krok 3</p>
+
+				<p><input type="checkbox" required name="legalConsent1"> Wyrażam zgodę nr 1 </p>
+				<p><input type="checkbox" required name="legalConsent2"> Wyrażam zgodę nr 2 </p>
+				<input type="hidden" name="elqFormName" value="recruitment"></p>
+				<input type="hidden" name="elqSiteID" value="885580810"></p>
+
+				<input id="pre_btn2" onclick="prev_step2()" type="button" value="Poprzednie">
+				<input class="submit_btn" onclick="validation(event)" type="submit" value="Wyślij">
+			</fieldset>
+		</form>
+	</div>
+	</div>
+</body>
+
+</html>
